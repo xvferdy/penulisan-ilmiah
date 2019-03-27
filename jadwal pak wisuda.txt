@@ -20,3 +20,5 @@ SABTU
 JAM KOSONG
 SENIN = pagi-siang
 RABU =  siang
+
+l
