@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> Belajar JavaScript </title>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #E6E6FA;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #B0C4DE;
+    }
+  </style>
+
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Tabel Siswa dengan AJAX</h1>
+  <p>Nama Siswa:
+    <select name="namaSiswa" id="namaSiswa">
+    </select>
+  </p>
+  <div id="hasil"></div>
+  <script>
+    var namaSiswaNode = document.getElementById("namaSiswa");
+    var hasilNode = document.getElementById("hasil");
+
+    function generateSiswa() {
+      var request = new XMLHttpRequest();
+      request.open("GET", "nama_siswa.php", false);
+      request.send();
+      namaSiswaNode.innerHTML = request.responseText;
+    }
+
+    function tabelSiswa() {
+      var nama = namaSiswaNode.value;
+      var request = new XMLHttpRequest();
+      request.open("GET", "tabel_siswa.php?n=" + nama, false);
+      request.send();
+      hasilNode.innerHTML = request.responseText;
+    }
+
+    generateSiswa();
+    namaSiswaNode.addEventListener("change", tabelSiswa);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> Belajar JavaScript </title>
+</head>
+
+<body>
+  <h1>Tabel Siswa dengan AJAX</h1>
+  <p>Nama Siswa:
+    <select name="siswa" id="siswa"></select>
+  </p>
+  <script>
+    var namaSiswaNode = document.getElementById("siswa");
+
+    function generateSiswa() {
+      var request = new XMLHttpRequest();
+      request.open("GET", "nama_siswa.php", false);
+      request.send();
+      namaSiswaNode.innerHTML = request.responseText;
+    }
+
+    generateSiswa();
+  </script>
+</body>
+
+</html>
