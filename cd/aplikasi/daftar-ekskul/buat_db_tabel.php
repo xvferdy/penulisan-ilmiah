@@ -99,7 +99,7 @@ if (!$hasil_query) {
 }
 
 // buat query untuk CREATE tabel masterekskul
-$query  = "CREATE TABLE masterekskul (kode CHAR(8),ekstrakurikuler VARCHAR(100), ";
+$query  = "CREATE TABLE masterekskul (kode INT(100),ekstrakurikuler VARCHAR(100), ";
 $query .= "guru VARCHAR(100))";
 
 $hasil_query = mysqli_query($link, $query);
@@ -113,15 +113,15 @@ if (!$hasil_query) {
 
 // buat query untuk INSERT data ke tabel masterekskul
 $query  = "INSERT INTO masterekskul VALUES ";
-$query .= "(1,'Sepak Bola', 'Lodi'),";
-$query .= "(2,'Bulutangkis',' Lodi'),";
-$query .= "(3,'Renang', 'Gelis'),";
-$query .= "(4,'Basket', 'Gelis'),";
-$query .= "(5,'Tata Boga', 'Andreas'),";
-$query .= "(6,'Bahasa Asing', 'Imam'),";
-$query .= "(7,'Klub Matematika', 'Sri'),";
-$query .= "(8,'Klub Sains', 'Pontoh'),";
-$query .= "(9,'Komputer', 'Hendrikus'),";
+$query .= "(01,'Sepak Bola', 'Lodi'),";
+$query .= "(02,'Bulutangkis', 'Lodi'),";
+$query .= "(03,'Renang', 'Gelis'),";
+$query .= "(04,'Basket', 'Gelis'),";
+$query .= "(05,'Tata Boga', 'Andreas'),";
+$query .= "(06,'Bahasa Asing', 'Imam'),";
+$query .= "(07,'Klub Matematika', 'Sri'),";
+$query .= "(08,'Klub Sains', 'Pontoh'),";
+$query .= "(09,'Komputer', 'Hendrikus'),";
 $query .= "(10,'Catur', 'Pontoh')";
 
 $hasil_query = mysqli_query($link, $query);
